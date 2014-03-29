@@ -1,10 +1,25 @@
 djangoTango
 ===========
 
-Django tutorial
+You can use this section for a quick reference if you need to remind yourself about particular actions.
+
+**********************************************Chapter 3***********************************************************
 
 
-4.5. *************************************************Basic Workflow***********************************************
+1) Creating a new Django Project
+
+To create the project run, django-admin.py startproject <name>, where <name> is the name of the project you wish to create.
+
+2) Creating a new Django application
+
+To create a new application run, $ python manage.py startapp <appname>, where <appname> is the name of the application you wish to create.
+Tell your Django project about the new application by adding it to the INSTALLED_APPS tuple in your project’s settings.py file.
+In your project urls.py file, add a mapping to the application.
+In your application’s directory, create a urls.py file to direct incoming URL strings to views.
+In your application’s view.py, create the required views ensuring that they return a HttpResponse object.
+
+
+**********************************************Chapter 4***********************************************************
 
 With the chapter complete, you should now know how to setup and create templates, use templates within your views,
 setup and use Django to send static media files, include images within your templates and setup Django’s static
