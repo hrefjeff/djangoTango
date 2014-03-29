@@ -1,4 +1,7 @@
 from django.conf.urls import patterns, include, url
+# This module allows access to the variables defined
+# within projects settings.py
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -17,3 +20,10 @@ urlpatterns = patterns('',
 
     url(r'^rango/', include('rango.urls')), # Add this new tuple!
 )
+
+if settings.DEBUG:
+	urlpatterns+= patterns(
+		'django.views.static',
+		(r'media/(?P<path>.*)',
+		'serve',
+		{'document_root': settings.MEDIA_ROOT}), )
