@@ -49,3 +49,42 @@ Check out the steps below on how to do this.
       an HTML page through the use of the <img /> tag. Remember to use the {% load static %} and {% static "filename" %} commands
       within the template to make your life easier!
 3)    Load the view that utilises the template you modified in your browser. Your static media should appear.
+
+
+**********************************************Chapter 5 Models and Databases***********************************************************
+
+
+1) Setting up your Database
+
+With a new Django project, you should first tell Django about the database you intend to use (i.e. configure DATABASES in settings.py). 
+
+Without doing so, Django won’t have anywhere to store your data. You can also enable the admin interface to make your life a little bit easier - and remember, you can always disable it later if you want to.
+
+2) Adding a Model
+
+The workflow for adding models can be broken down into five steps.
+
+    a) First, create your new model(s) in your Django application’s models.py file.
+    b) With the model created, reconfigure the admin interface to include your new model(s), if you are using it.
+    c) You should then synchronise or resynchronise your database with the $ python manage.py syncdb command.
+       This will create the necessary infrastructure within the database for your new model(s).
+    d) Create/Edit and then run your population script for your new model(s).
+
+You should also remember about the nuances of the syncdb command (Use SOUTH).
+Note that the command can be used only for adding new models to your database - if you 
+wish to amend an existing model, you must recreate the database.
+
+Now that you’ve completed the chapter, try out these exercises to reinforce and practice what you have learnt.
+
+    Update the Category model to include the additional attributes, views and likes where the default value is zero.
+    Re-sync your database, and update your population script so that the Python category has 128 views and 64 likes, the Django category has 64 views and 32 likes, and the Other Frameworks category has 32 views and 16 likes.
+    Undertake the part two of official Django tutorial if you have not done so. This will help to reinforce further what you have learnt here, and to learn more about customising the admin interface.
+    Customise the Admin Interface - so that when you view the Page model it displays in a list the category, the name of the page and the url.
+
+5.10.1. Hints
+
+If you require some help or inspiration to get these exercises done, these hints will hopefully help you out.
+
+    To customise the admin interface, you will need to edit rango/admin.py and create a PageAdmin class that inherits from admin.ModelAdmin.
+    Within your new PageAdmin class, add list_display = ('title', 'category', 'url').
+    Finally, register the PageAdmin class with Django’s admin interface. You should modify the line admin.site.register(Page). Change it to admin.site.register(Page, PageAdmin) in Rango’s admin.py file.
