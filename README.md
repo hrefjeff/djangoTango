@@ -74,13 +74,6 @@ You should also remember about the nuances of the syncdb command (Use SOUTH).
 Note that the command can be used only for adding new models to your database - if you 
 wish to amend an existing model, you must recreate the database.
 
-Now that you’ve completed the chapter, try out these exercises to reinforce and practice what you have learnt.
-
-    Update the Category model to include the additional attributes, views and likes where the default value is zero.
-    Re-sync your database, and update your population script so that the Python category has 128 views and 64 likes, the Django category has 64 views and 32 likes, and the Other Frameworks category has 32 views and 16 likes.
-    Undertake the part two of official Django tutorial if you have not done so. This will help to reinforce further what you have learnt here, and to learn more about customising the admin interface.
-    Customise the Admin Interface - so that when you view the Page model it displays in a list the category, the name of the page and the url.
-
 5.10.1. Hints
 
 If you require some help or inspiration to get these exercises done, these hints will hopefully help you out.
