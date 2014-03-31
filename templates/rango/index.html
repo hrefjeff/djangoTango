@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<!-- Loads the snake jpg  -->
+{% load static %}
+
+<html>
+
+<head>
+    <!--*************If I want to include JS and CSS**************
+	<link rel="stylesheet" href="{% static "css/base.css" %}" /> <!-- CSS -->
+	<script src="{% static "js/jquery.js" %}"></script> <!-- JavaScript -->
+	-->
+	<title>Rango</title>
+</head>
+
+<body>
+	<h1>Rango says...</h1>
+	hello world! <strong>{{ boldmessage }}</strong><br />
+	<a href="/rango/about/">About</a><br />
+	<img src="{% static "oldSnake.jpg" %}" alt="snakePic" />
+</body>
